@@ -13,6 +13,7 @@ function EntpackBinaerString() {
         // Setzt den String für die nächste Eingabe zurück
         binaerString = ""
         I2C_LCD1602.ShowString(asciiZeichen, hi, ho)
+        hi + 1
         
         
         
