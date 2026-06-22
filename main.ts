@@ -12,8 +12,8 @@ function EntpackBinaerString() {
         basic.showString(asciiZeichen, 150)
         // Setzt den String für die nächste Eingabe zurück
         binaerString = ""
-        I2C_LCD1602.ShowString(asciiZeichen, 0, 0)
-        music.play(music.tonePlayable(Note.B5, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
+        I2C_LCD1602.ShowString(asciiZeichen, hi, ho)
+        
         
         
         
@@ -64,7 +64,7 @@ input.onButtonPressed(Button.A, function () {
         # . . . .
         # # . . .
         `)
-        music.play(music.tonePlayable(Note.C, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
+        
         
 })
 // Wenn A+B gedrückt wird, wandle die Binärkette in ASCII um
@@ -85,16 +85,27 @@ input.onButtonPressed(Button.B, function () {
     basic.showLeds(`
     . . . . .
     . . . . .
-    . . # . .
     . . . . .
-    . . . . .
+    . . . . #
+    . . . # #
     `)
-    music.play(music.tonePlayable(Note.D, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
+    
        
 })
 let position_outputus = 0
 let binaerString = ""
 let asciiZeichen = ""
+let hi = 0
+let ho = 0
 radio.setGroup(815)
 position_outputus = 1
 I2C_LCD1602.LcdInit(39)
+basic.forever(function() {
+    
+    if (hi = 16) {
+        
+        hi = 0
+        ho = 1
+
+    }
+})
