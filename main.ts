@@ -1,9 +1,11 @@
+// setzt die Radio Narichten um zwischen zwei geräten zu kommunizieren. 
 enum RadioMessage {
     message2 = 1435,
     message4 = 29926,
     message3 = 31126,
     message1 = 49434
 }
+// funktion um den Binär string in ASCII code umzuwandeln.
 function EntpackBinaerString() {
     if (binaerString.length >= 8) {
         let dezimalZahl = parseInt(binaerString, 2)
