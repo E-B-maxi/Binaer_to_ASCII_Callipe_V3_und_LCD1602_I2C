@@ -15,9 +15,9 @@ function EntpackBinaerString() {
         // Setzt den String für die nächste Eingabe zurück
         binaerString = ""
         // zeigt Binär string an.
-        I2C_LCD1602.ShowString(asciiZeichen, hi, 0)
+        I2C_LCD1602.ShowString(asciiZeichen, position_outputus, ho)
         // ändert "hi" (position) um +1 
-        hi + 1
+        
         
         
         
@@ -34,12 +34,12 @@ function EntpackBinaerString() {
                 . . . . .
                 # . # . #
                 `)
-                hi = 0
+                
                 ho = 0
         }
         position_outputus += 1
     } else {
-        position_outputus = 1
+        position_outputus = 0
          
         
         // setzt das Display zurück 
@@ -51,7 +51,7 @@ function EntpackBinaerString() {
             . . . . .
             # . # . #
             `)
-            hi = 0
+            
             ho = 0
         basic.pause(1000)
         basic.showLeds(`
@@ -105,8 +105,12 @@ input.onButtonPressed(Button.B, function () {
 let position_outputus = 0
 let binaerString = ""
 let asciiZeichen = ""
-let hi = 0
 let ho = 0
 radio.setGroup(815)
-position_outputus = 1
+position_outputus = 0
 I2C_LCD1602.LcdInit(39)
+basic.forever(function() {
+    if (position_outputus = 16)
+    position_outputus =0
+    ho = 1
+})
